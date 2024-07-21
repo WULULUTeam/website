@@ -10,13 +10,7 @@ export const metadata: Metadata = {
   description: "《恋与深空》男主之一沈星回Xavier的同人网站",
 };
 
-export default function RootLayout({
-  children,
-  param,
-}: Readonly<{
-  children: React.ReactNode;
-  param: { locale: string };
-}>) {
+export default function RootLayout({ children, params: { locale } }: any) {
   return (
     <html lang="en">
       <head>

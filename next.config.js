@@ -1,6 +1,6 @@
 /** @type {import('next').NextConfig} */
-const path = require('path');
-const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
+const path = require("path");
+const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
 const nextConfig = {
   reactStrictMode: true,
@@ -10,17 +10,17 @@ const nextConfig = {
     styledComponents: true,
   },
   sassOptions: {
-    includePaths: [path.join(__dirname, './shared-scss')],
+    includePaths: [path.join(__dirname, "./shared-scss")],
     additionalData: `@import "global.scss";`, // 添加在文件末尾
   },
   eslint: {
-    dirs: ['app'], // 指定要检查的目录
+    dirs: ["app"], // 指定要检查的目录
   },
   images: {
     dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
+    contentDispositionType: "attachment",
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-    formats: ['image/webp'],
+    formats: ["image/webp"],
     unoptimized: true,
     // remotePatterns: [
     //   {
@@ -33,18 +33,18 @@ const nextConfig = {
   webpack: (config, { dev, isServer }) => {
     config.resolve.alias = {
       ...config.resolve.alias,
-      '@': path.resolve(__dirname),
+      "@": path.resolve(__dirname),
     };
     config.module.rules.push({
       test: /\.svg$/,
       use: [
         {
-          loader: '@svgr/webpack',
+          loader: "@svgr/webpack",
           options: {
             svgoConfig: {
               plugins: [
                 {
-                  name: 'preset-default',
+                  name: "preset-default",
                   params: {
                     overrides: {
                       removeViewBox: false,
@@ -60,28 +60,28 @@ const nextConfig = {
     if (!dev) {
       // 在每次编译时进行校验
       config.plugins.push(new ForkTsCheckerWebpackPlugin());
-      require('./sitemap-generator');
+      require("./sitemap-generator");
     }
     return config;
   },
   async headers() {
     return [
       {
-        source: '/:all*(svg|jpg|png|jpeg|gif|json)',
+        source: "/:all*(svg|jpg|png|jpeg|gif|json)",
         locale: false,
         headers: [
           {
-            key: 'Cache-Control',
-            value: 'public, max-age=31536000, must-revalidate',
+            key: "Cache-Control",
+            value: "public, max-age=31536000, must-revalidate",
           },
         ],
       },
       {
-        source: '/:all*(webp|jpg|png|jpeg)',
+        source: "/:all*(webp|jpg|png|jpeg)",
         headers: [
           {
-            key: 'Content-Type',
-            value: 'image/webp',
+            key: "Content-Type",
+            value: "image/webp",
           },
         ],
       },
