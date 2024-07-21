@@ -1,4 +1,0 @@
-  - name: Build page
-       run: |
-         npm run build
-         touch ./out/.nojekyll   
