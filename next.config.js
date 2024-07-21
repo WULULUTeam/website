@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
+
+const repo = 'website'
 let assetPrefix = `/${repo}/`
 let basePath = `/${repo}`
 const isGithubActions = process.env.GITHUB_ACTIONS || false
