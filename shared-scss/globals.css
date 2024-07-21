@@ -1,0 +1,69 @@
+@import 'bulma/css/bulma.min.css';
+body,
+html,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+header,
+menu,
+section,
+p,
+input,
+td,
+th,
+ins {
+  padding: 0;
+  margin: 0;
+}
+html.is-clipped-cart {
+  overflow: hidden !important;
+  touch-action: none;
+}
+body {
+  color: #111;
+}
+.button.is-blue {
+  color: #fff;
+  background-color: #463ff4;
+  border-color: #463ff4;
+}
+html,
+body {
+  font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Droid Sans', 'Helvetica Neue', 'Microsoft YaHei', 'Arial', sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.modal-content {
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 0.3rem;
+  outline: 0;
+  --mdb-modal-box-shadow: 0 2px 15px -3px rgba(0, 0, 0, 0.07), 0 10px 20px -2px rgba(0, 0, 0, 0.04);
+  border: 0;
+  box-shadow: var(--mdb-modal-box-shadow);
+}
