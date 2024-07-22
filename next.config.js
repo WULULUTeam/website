@@ -14,8 +14,8 @@ if (isGithubActions) {
 
 const nextConfig = {
   output: "export",
-  assetPrefix: "/website",
-  basePath: "/website",
+  assetPrefix: "/",
+  basePath: "/",
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: true,
