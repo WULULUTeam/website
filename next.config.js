@@ -2,20 +2,10 @@
 const path = require("path");
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 
-const repo = 'website'
-let assetPrefix = `/${repo}/`
-let basePath = `/${repo}`
-const isGithubActions = process.env.GITHUB_ACTIONS || false
-if (isGithubActions) {
-  const repo = process.env.GITHUB_REPOSITORY.replace(/.*?\//, '')
-  assetPrefix = `/${repo}/`
-  basePath = `/${repo}`
-}
-
 const nextConfig = {
   output: "export",
-  assetPrefix: "/",
-  basePath: "/",
+  assetPrefix: "/website",
+  // basePath: "/",
   reactStrictMode: true,
   swcMinify: true,
   trailingSlash: true,

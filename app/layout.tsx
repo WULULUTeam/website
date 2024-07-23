@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "../shared-scss/globals.css";
 import styles from "./style.module.scss";
+import { Navbar } from "@/components/common/Navbar";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,7 +16,10 @@ export default function RootLayout({ children, params: { locale } }: any) {
     <html lang="en">
       <head>
         <link rel="shortcut icon" href="/Logo.png" />
-        <body className={styles["is-body"]}>{children}</body>
+        <body className={styles["is-body"]}>
+          <Navbar></Navbar>
+          {children}
+        </body>
       </head>
     </html>
   );
