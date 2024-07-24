@@ -45,7 +45,7 @@ export const Navbar = () => {
           ></Image>
           <span className={styles.button_text}>周边信息</span>
         </Link>
-        <Link className={styles.navbar_button} href="/inform">
+        <Link className={styles.navbar_button} href="/notice">
           <span className={styles.button_text}>活动通知</span>
         </Link>
       </div>
